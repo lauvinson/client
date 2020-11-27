@@ -8,7 +8,9 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <stdio.h>
-#include <conio.h>
+#include <stdarg.h>
+#include<string.h>
+#include "io.h"
 
 int client_udp_execute(int argc, char *argv[]){
     int client_sockfd;
@@ -28,6 +30,7 @@ int client_udp_execute(int argc, char *argv[]){
         return 1;
     }
     /*循环的发送接收信息并打印接收信息--recv返回接收到的字节数，send返回发送的字节数*/
+
     while(1) {
         char ch = getch();
         buf[0] = ch;
